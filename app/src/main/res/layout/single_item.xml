@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#838181"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/white"
+        >
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/profile_image"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/favicon"
+            android:layout_marginTop="20dp"
+            />
+        <TextView
+            android:id="@+id/txt1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nobel College"
+            android:textSize="22sp"
+            android:layout_toRightOf="@+id/profile_image"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="50dp"
+            android:layout_alignParentTop="true"
+            />
+        <TextView
+            android:id="@+id/txt2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_marginLeft="10dp"
+            android:text="You missed a call from everyone..."
+            android:textSize="12sp"
+            android:layout_below="@+id/txt1"
+            android:layout_toRightOf="@+id/profile_image"
+            />
+        <TextView
+            android:id="@+id/txt3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="7:20 am"
+            android:textSize="10sp"
+            android:layout_toRightOf="@+id/txt2"
+            android:layout_below="@+id/txt1"
+            android:padding="5dp"
+            android:layout_marginLeft="8dp"
+
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>
