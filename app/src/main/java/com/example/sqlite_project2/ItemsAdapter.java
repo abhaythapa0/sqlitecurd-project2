@@ -40,6 +40,9 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHold
         if (image != null) {
             holder.imageView.setImageURI(image);
         }
+        else {
+            holder.imageView.setImageResource(R.drawable.favicon);
+        }
 
     }
 

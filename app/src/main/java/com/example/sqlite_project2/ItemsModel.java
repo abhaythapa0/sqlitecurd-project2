@@ -7,6 +7,12 @@ public class ItemsModel {
     private String name,description;
     private Uri image;
 
+    public ItemsModel(String name, String description, Uri image) {
+        this.name = name;
+        this.description = description;
+        this.image = image;
+    }
+
     public int getId() {
         return id;
     }

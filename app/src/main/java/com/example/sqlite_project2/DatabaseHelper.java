@@ -1,6 +1,8 @@
 package com.example.sqlite_project2;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -26,7 +28,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-    sqLiteDatabase.execSQL("create table " + TABLE_NAME + "(NAME TEXT, DESCRIPTION TEXT)");
+    sqLiteDatabase.execSQL("create table " + TABLE_NAME + " (" + COL1 + " TEXT, " + COL2 + " TEXT, " + COL3 + " TEXT)");
 
     }
 
@@ -34,6 +36,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(sqLiteDatabase);
+    }
+
+    public boolean insertData(String name, String description, String imageUri){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(COL1, name);
+        cv.put(COL2, description);
+        cv.put(COL3, imageUri);
+    long result = sqLiteDatabase.insert(TABLE_NAME, null, cv);
+    return result != -1;
+    }
+
+    public Cursor getAllItems(){
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+        return sqLiteDatabase.rawQuery("select * from " + TABLE_NAME, null);
     }
 }
 
